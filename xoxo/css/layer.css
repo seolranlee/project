@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,900);
+/* ===============================================================
+   layer
+   =============================================================== */
+.layer {opacity:0;position:absolute;top:0;bottom:0;right:0;left:0;background:rgba(0,0,0,0.8);transition:all 0.3s 0s ease-in-out;padding-top:10%;}
+.layer.open {opacity:1;z-index:9999999; transition: all 0.3s 0s ease-in-out;}
+.layer .close:hover{cursor:pointer;}

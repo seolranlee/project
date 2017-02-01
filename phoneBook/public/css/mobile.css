@@ -1,0 +1,113 @@
+
+/* This applies from 0px to 600px */
+body{background:#f2f2f2;}
+.wrap{}
+header{position:fixed;left:0;right:0;top:0;height:100px;line-height:100px;padding:0 10px;min-width:361px;background:rgb(66, 133, 244);transition:all .5s cubic-bezier(.165,.84,.44,1);box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.12)}
+	/*header:hover{}*/
+	header .wrap{display:table;width:100%}
+	header .wrap .header_l{display:table-cell;vertical-align:middle;text-align:left;}
+	header .wrap .header_l h1 a{color:#fff;font-weight:300;font-size:18px;letter-spacing:-0.03em}
+	header .wrap .header_r{position:relative;display:table-cell;vertical-align:middle;text-align:right;}
+	header .wrap .header_r .search_box{display:none;}
+	header .wrap .header_r .search_box.on{display:inline-block;vertical-align:middle;margin-right:10px;}
+	header .wrap .header_r .search_box input[type="text"]{display:inline-block;vertical-align:middle;width:150px;height:35px;line-height:35px;padding:0 10px;}
+	header .wrap .header_r a{display:inline-block;vertical-align:middle;color:#fff;}
+	header .wrap .header_r a i{display:inline-block;vertical-align:middle}
+	header.fixed{height:75px;line-height:75px;}
+
+section{padding-top:100px;min-width:360px;background:#f2f2f2;}
+	section .wrap{padding:20px 10px;}
+	.phonecard_list{}
+	.phonecard_list ul{margin-top:-30px;}
+	.phonecard_list ul li{margin-top:30px;}
+	.phonecard_list .phonecard{padding:30px;border-radius:5px;background:#fff;transition:all .5s cubic-bezier(.165,.84,.44,1);box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);}
+	.phonecard_list .phonecard:hover{/*box-shadow: 15px 15px 25px 0px rgba(0,0,0,0.13);*/box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.13);}
+
+	.phonecard_list .phonecard .cardtop{overflow:hidden;padding-bottom:30px;}
+	.phonecard_list .phonecard .cardtop .cardtop_l{float:left;}
+	.phonecard_list .phonecard .cardtop .cardtop_r{float:right;}
+	.phonecard_list .phonecard .cardtop .cardtop_r a{margin-left:10px;}
+	.phonecard_list .phonecard .cardtop .cardtop_r a i{color:#222;transition:.5s;}
+	.phonecard_list .phonecard .cardtop .cardtop_r a i:hover{color:rgb(66, 133, 244);}
+	.phonecard_list .phonecard .cardtop .cardtop_r a:first-child{margin-left:0;}
+	.phonecard_list .phonecard .cardtop .user_id{display:inline-block;vertical-align:middle;font-weight:700;font-size:16px;}
+	.phonecard_list .phonecard .cardtop .uploaded_date{display:inline-block;vertical-align:middle;margin-left:5px;}
+	.phonecard_list .phonecard .card_content{padding-bottom:50px;border-bottom:1px solid #eee;}
+	.phonecard_list .phonecard .card_bottom{padding-top:20px;}
+	.phonecard_list .phonecard .card_bottom .like{}
+	.phonecard_list .phonecard .card_bottom .like a{display:inline-block}
+	.phonecard_list .phonecard .card_bottom .like a i{display:inline-block;vertical-align:middle;color:#FFEB3B;}
+	.phonecard_list .phonecard .card_bottom .like a span{display:inline-block;vertical-align:middle;margin-left: 5px;}
+	.phonecard_list .phonecard input{display:inline-block;vertical-align:middle;width:auto;border:1px solid #eee;}
+	.phonecard_list .phonecard input[name='name']{width:75px}
+	.phonecard_list .phonecard input[name='date']{width:125px}
+	.phonecard_list .phonecard input[name='phone']{width:70%}
+
+
+#floating_area{position:fixed;bottom:0;width:100%;min-width: 361px}
+	#floating_area>a{display:block;position:absolute;z-index:999;bottom:20px;right:20px;}
+	#floating_area a .write_btn{width:50px;height:50px;background:#E91E63
+	;border-radius:50%;text-align:center;transition:all .5s cubic-bezier(.165,.84,.44,1);box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)}
+	#floating_area a .write_btn.off{display:none}
+	#floating_area a .write_btn:hover{}
+	#floating_area a .write_btn i{display:inline-block;line-height:50px;color:#fff;}
+	#floating_area .writecard{position:absolute;z-index:999;bottom:20px;right:-100%;width:100%;height:auto;background:#E91E63;font-size:14px;transition:.3s;color:#fff;}
+	#floating_area .writecard.on{bottom:20px;right:0;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);}
+	#floating_area .writecard .writeform{padding:15px;}
+	/*#floating_area .writecard.on form{display:block}*/
+	#floating_area .writeform ul li{display:table;width:100%;height:50px;table-layout:fixed;}
+	#floating_area .writeform .form_title{display:table-cell;vertical-align:top;text-align:left;width:100px;text-transform:uppercase;font-size:12px;}
+	#floating_area .writeform .form_title label{display:block}
+	#floating_area .writeform .form_content{display:table-cell;vertical-align:top}
+input{border:0;height:25px;line-height:25px;padding:0 10px;border-radius:3px}
+
+
+/* This applies from 360px onwards */
+@media (min-width: 361px) {
+
+}
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {
+	
+	header{position:fixed;left:0;right:0;top:0;height:200px;line-height:200px;background:rgb(66, 133, 244);transition:all .5s cubic-bezier(.165,.84,.44,1);}
+	header.fixed{height:100px;line-height:100px;}
+	header:hover{box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.12)}
+	header .wrap .header_r .ico_search i{font-size:3em}
+	header .wrap .header_l h1 a{font-weight:400;font-size:34px;}
+	header input[type="text"]{width:200px;height:35px;line-height:35px;}
+
+	section{padding-top:200px;}
+
+	#floating_area{position:fixed;bottom:0;left:auto;right:0;width:100%;}
+	#floating_area>a{display:block;position:absolute;bottom:30px;right:30px;}
+	#floating_area a .write_btn{width:75px;height:75px;background:#E91E63
+	;border-radius:50%;text-align:center;transition:all .5s cubic-bezier(.165,.84,.44,1);box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)}
+	#floating_area a .write_btn.off{display:none}
+	#floating_area a .write_btn:hover{}
+	#floating_area a .write_btn i{display:inline-block;line-height:75px;color:#fff;}
+	#floating_area .writecard{position:absolute;z-index:999;bottom:30px;right:-500px;width:500px;height:auto;background:#E91E63;font-size:14px;transition:.3s;color:#fff;}
+	#floating_area .writecard.on{bottom:30px;right:30px;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);}
+	#floating_area .writecard .writeform{padding:30px;}
+	/*#floating_area .writecard.on form{display:block}*/
+	#floating_area .writeform ul li{display:table;width:100%;height:50px;table-layout:fixed;}
+	#floating_area .writeform .form_title{display:table-cell;vertical-align:top;text-align:left;width:150px;text-transform:uppercase;}
+	#floating_area .writeform .form_content{display:table-cell;vertical-align:top}
+}
+
+/* This applies from 1170px onwards */
+@media (min-width: 1170px) {
+	.wrap{width:1170px;margin:0 auto}
+	header .wrap{width:1170px;margin:0 auto;}
+	
+
+}
+.phone_item{}
+/*.phone_item input{width:25%;}*/
+.phone_item span{display:inline-block;vertical-align:middle;margin:0 5px;font-size:16px;}
+.form_btn_wrap{text-align:center;font-size:0;}
+.form_btn_wrap .reg_btn{margin-left:10px;display:inline-block;height:30px;line-height:30px;padding:0 20px;background:#fff;font-size:12px;text-transform:uppercase;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);transition:.4s}
+.form_btn_wrap .reg_btn:first-child{margin-left:0;}
+.form_btn_wrap .reg_btn:hover{background:#f2f2f2;box-shadow:0 2px 2px 0 rgba(0,0,0,0.3), 0 1px 5px 0 rgba(0,0,0,0.3), 0 3px 1px -2px rgba(0,0,0,0.3);}
+
+

@@ -1,0 +1,80 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700');
+/* reset:Start */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0; padding:0;}
+fieldset,img {border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:''; content:none}
+input,select,textarea,button {vertical-align:middle}
+input:focus, button:focus, textarea:focus {outline:none;}
+button {border:0 none; background-color:transparent; cursor:pointer}
+body {background:#fff; -webkit-text-size-adjust:none;}
+body,th,td,input,select,textarea,button {font-family: 'Roboto', sans-serif;}
+a {text-decoration:none}
+a:active, a:hover {text-decoration:none;}
+address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal}
+.clear {clear:both}
+figure {line-height:0}
+*,*:before,*:after{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+input,textarea {-webkit-appearance:none;-webkit-border-radius:0;}
+/* reset:End */
+
+/* Common */
+.blind, legend {display:block; overflow:hidden; position:absolute; top:-1000em;left:0}
+.fa-15x{font-size:15em !important;}
+.fa-10x{font-size:10em !important;}
+.primrose{background:#FFE57F !important}
+.btn-floating i{color:#222;transition:all .3s ease-out;}
+.btn-floating:hover i{color:#fff;}
+/* ==========================================================================
+  CUSTOMIZING
+   ========================================================================== */
+html{width:100%;height:100%;}
+body{width:100%;height:100%;background:#f2f2f2;transition:all .5s ease-out;}
+body.bg1{background:#3F51B5;}
+body.bg2{background:#E0E0E0;}
+body.bg3{background:#FF5252;}
+/* nav */
+nav{background:#000000;transition:all .3s ease-out;}
+nav ul a:hover{color:rgba(255, 255, 255, 0.8);background-color:rgba(255, 255, 255, 0.2);}
+nav .brand-logo.center{font-family: 'Roboto Mono', monospace;letter-spacing:.3em;font-size:16px;font-weight:600;}
+nav:hover{height:100px;line-height:100px;}
+nav ul a{text-transform:uppercase;letter-spacing:1px;font-size:12px;}
+
+
+
+.btn-floating{position:absolute;left:50px;top:50px;}
+
+
+section{position:relative;width:100%;height:100%;}
+.big{width:600px;height:600px;text-align:center;}
+.teal-blue{background:#3F51B5;box-shadow:none;border-radius:0}
+.teal-blue:hover{box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.12)}
+
+.inner_box{position:absolute;width:900px;height:600px;left:50%;top:50%;margin-left:-450px;margin-top:-300px;}
+.inner_box>div{position:absolute;transition:all .2s ease-out;}
+
+/*big*/
+.inner_box .big{left:0;top:0;z-index:3;opacity:0;fiter:alpha(opacity=0);transform:translate(0,100px);transition:all .5s cubic-bezier(.165,.84,.44,1)}
+.inner_box.active .big{opacity:1;filter:alpha(opacity=100);transform:translate(0,0);transition-delay:0s;}
+.inner_box .big i.hidden{display:none;}
+
+/*medium*/
+.inner_box .medium{right:0;top:0;width:300px;height:300px;background:#E0E0E0;z-index:2;opacity:0;fiter:alpha(opacity=0);transform:translate(0,100px);transition:all .5s cubic-bezier(.165,.84,.44,1)}
+.inner_box.active .medium{opacity:1;filter:alpha(opacity=100);transform:translate(0,0);transition-delay:.4s;}
+
+/*medium-bottom*/
+.inner_box .medium.bottom{top:300px;background:#FF5252;z-index:1;fiter:alpha(opacity=0);transform:translate(0,100px);transition:all .5s cubic-bezier(.165,.84,.44,1)}
+.inner_box.active .medium.bottom{opacity:1;filter:alpha(opacity=100);transform:translate(0,0);transition-delay:.8s;}
+
+.card-content{position:absolute;top:30px;left:30px;text-align:left;}
+.card-icon{position:absolute;bottom:100px;right:100px;}
+.card-icon.v2{bottom:75px;right:75px;}
+.card-title{font-family: 'Roboto Mono', monospace;font-weight:400;font-size:24px;letter-spacing:-.03em;}
+
+.card-panel i{transition:all .3s ease-out;}
+.card-panel:hover .card-icon i{text-shadow:4px 3px 0 rgba(0,0,0,.15),9px 8px 0 rgba(0,0,0,0.15)}
+.card-panel:hover .card-icon.v2 i{text-shadow:4px 3px 0 rgba(0,0,0,.15),4px 3px 0 rgba(0,0,0,0.15)}
+.card-more{position:absolute;bottom:30px;right:30px;}

@@ -1,0 +1,74 @@
+body {
+  background: #f2f2f2; }
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100px;
+  line-height: 100px;
+  padding: 0 10px;
+  background: #4285f4;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.12); }
+  header .wrap {
+    display: table;
+    width: 100%; }
+    header .wrap .header_l {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left; }
+      header .wrap .header_l h1 a {
+        color: #fff;
+        font-weight: 300;
+        font-size: 18px;
+        letter-spacing: -0.03em; }
+    header .wrap .header_r {
+      position: relative;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right; }
+      header .wrap .header_r .search_box {
+        display: none; }
+        header .wrap .header_r .search_box input[type="text"] {
+          display: inline-block;
+          vertical-align: middle;
+          width: 150px;
+          height: 35px;
+          line-height: 35px;
+          padding: 0 10px; }
+      header .wrap .header_r .search_box.on {
+        display: inline-block;
+        vertical-align: middle; }
+      header .wrap .header_r a {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff; }
+        header .wrap .header_r a i {
+          display: inline-block;
+          vertical-align: middle; }
+
+header.fixed {
+  height: 75px;
+  line-height: 75px; }
+
+section {
+  padding-top: 100px;
+  background: #f2f2f2; }
+  section .wrap {
+    padding: 20px 10px; }
+    section .wrap .phonecard_list ul {
+      margin-top: -30px; }
+      section .wrap .phonecard_list ul li {
+        margin-top: 30px; }
+        section .wrap .phonecard_list ul li .phonecard {
+          padding: 30px;
+          border-radius: 5px;
+          background: #fff;
+          transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+        section .wrap .phonecard_list ul li .phonecard:hover {
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13); }
+
+/*# sourceMappingURL=style.css.map */

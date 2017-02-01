@@ -1,0 +1,104 @@
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic);
+
+html, body {height:100%;}
+body{font-family:'나눔고딕', Nanum Gothic, Arial;font-size: 13px;line-height:20px;letter-spacing:-0.05em;color:#565656;}
+*::selection{background-color:#000;color:#fff;}
+
+/* intro{s} */
+#intro{position:relative;z-index:1;height:100%;background:#aaa;}
+#intro h1{position:absolute;top:50%;left:50%;margin-left:-40px;margin-top:-46px;}
+#intro h1 a{display:block;}
+/* left */
+#intro .left{position:absolute;z-index:-1;width:50%;height:100%;left:0;top:0;background:#fff;text-align:center;}
+#intro .left>div{opacity:0;position:absolute;top:50%;width:100%;margin-top:-278px;transition: all 0.2s 0s ease-in-out;}
+#intro .left:hover>div{opacity:1;transition: all 0.2s 0s ease-in-out;}
+#intro .left>div>h2{margin-bottom: 20px;font-family: 'Crimson Text', serif;font-style: italic;font-size: 50px;font-weight:400;}
+#intro .left>div>p{margin-bottom:100px;}
+#intro .left>div ul li{border-bottom:1px solid #f0f0f0;}
+#intro .left>div ul li:first-child{border-top:1px solid #f0f0f0;}
+#intro .left>div ul li a{display:block;padding:20px 0;width:100%;height:100%;font-family:'Raleway', sans-serif;font-weight: 600; font-size: 12px;letter-spacing: 0.1em;text-transform:uppercase;color:#3c3c3c;}
+#intro .left>div ul li:hover a{background:#fafafa;color:#797979;}
+/* right */
+#intro .right{position:absolute;z-index:-1;width:50%;height:100%;right:0;top:0;text-align:center;background-image:url(../images/right-img.jpg);background-size:cover;}
+#intro .right>div{width:100%;height:100%;background:rgba(0,0,0,0.9);}
+#intro .right>div span{opacity:1;position:absolute;left:50%;top:50%;display:block;width:34px;height:20px;margin-left:-17px;margin-top:-10px;background:url(../images/arrow.png);text-indent:-9999px;transition: all 0.2s 0s ease-in-out;}
+#intro .right:hover>div span{opacity:0;transition: all 0.2s 0s ease-in-out;}
+#intro .right>div>div{opacity:0;position:absolute;width:100%;top:50%;color:#fff;text-align:center;margin-top:-99px;transition: all 0.2s 0s ease-in-out;}
+#intro .right:hover>div>div{opacity:1;transition: all 0.2s 0s ease-in-out;}
+#intro .right>div>div>p{margin-bottom:155px;}
+#intro .right>div>div>a{display:block;width:180px;height: 30px;margin:0 auto;line-height:30px;border:1px solid white;text-align:center;color:#fff;font-size: 11px;letter-spacing: 0.15em;text-transform :uppercase;}
+#intro .right>div>div>a:hover{background:#fff;color:#000;}
+/* intro{e} */
+
+/* side_menu{s} */
+#side_menu{position:fixed;width:190px;height:100%;min-height:600px;top:0;left:0;border-right:1px solid #f0f0f0;text-align:center;}
+#side_menu h1 a{display:block;width:80px;height:92px;margin:30px auto 20px auto;}
+#side_menu h2{font-family:'Crimson Text', serif;font-weight:600;font-style:italic;font-size:24px;color:#222;letter-spacing:0}
+#side_menu ul{position:absolute;width:100%;top:50%;margin-top:-94px;}
+#side_menu ul li{}
+#side_menu ul li a{display:block;padding:13px 0;border-bottom:1px solid #f0f0f0;font-family:'Raleway', sans-serif; font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;}
+#side_menu ul li:first-child a{border-top:1px solid #f0f0f0;}
+#side_menu ul li a:hover{background-color:#fafafa;color:#797979;}
+/* side_menu{e} */
+
+/* contents{s} */
+#contents{padding:100px 75px 100px 265px;}
+#contents h3{font-family:'Crimson Text', serif;font-weight:600;font-style:italic;font-size:30px;color:#000;margin-bottom: 30px;letter-spacing:-0.03em;}
+
+/* profile{s} */
+#contents #profile .about{overflow:hidden;padding-bottom:30px;border-bottom:1px solid #ebebeb;}
+#contents #profile .about p{float:left;text-overflow:ellipsis;display:inline-block;max-width:700px;text-align:justify;}
+#contents #profile .about>ul{float:right;}
+#contents #profile .about>ul li a{letter-spacing:0;font-size:14px;transition: all 0.2s 0s ease-in-out;}
+#contents #profile .about>ul li:first-child:hover a{color:#fbe600;}
+#contents #profile .about>ul li:nth-child(2):hover a{color:#3a5795;}
+#contents #profile .about>ul li:last-child:hover a{color:#ad8166;}
+#contents #profile .about>ul li a i{margin-right:15px;}
+#contents #profile .work, #contents #profile .skills{padding-top:30px;padding-bottom:30px;border-bottom:1px solid #ebebeb;}
+#contents #profile .work ul>li>dl>dt{margin-bottom:10px;font-family:'Roboto', serif;font-weight:500;font-size: 16px; color: #222121;letter-spacing:-.03em;}
+#contents #profile .work ul>li>dl{padding-left:50px;}
+#contents #profile .work ul>li:last-child{margin-top:3px;}
+#contents #profile .work ul>li{position:relative;height:110px;}
+#contents #profile .work ul>li:before{position:absolute;left:0;top:0;display:block;content:'';width:7px;height:110px;background:url(../images/work_line.png) no-repeat ;}
+
+/* graph */
+#contents #profile .skills>ul{overflow:hidden;}
+#contents #profile .skills>ul>li{margin-right:50px;float:left;text-align:center;}
+#contents #profile .skills>ul>li>div.demo>div>div.ab>div.cir span.perc{margin:0 auto;font-family:'Crimson Text',serif;font-style:italic;color:#222121 !important;}
+#contents #profile .skills>ul>li>div.demo>div{margin:0 auto 20px auto;}
+#contents #profile .skills>ul p { font-family: 'Roboto', serif; font-weight: 500; }
+/* profile{e} */
+
+/* portfolio{s} */
+#contents #portfolio, #contents #contact{padding:30px 0;border-bottom:1px solid #ebebeb;}
+#contents #portfolio ul{overflow:hidden;}
+#contents #portfolio ul li{float:left;}
+#contents #portfolio ul li a{position:relative;display:block;width:418px;height:auto;}
+#contents #portfolio ul li a .img_box{width:100%;height:100%;overflow:hidden;background:#000}
+#contents #portfolio ul li a .img_box img{display:block;vertical-align:top;width:100%;height:auto;opacity:1;transition:all 0.15s ease-in-out;transform:scale(1);}
+
+#contents #portfolio ul li a:hover .img_box img{transform:scale(1.6);opacity:0.3;}
+#contents #portfolio ul li a:hover dl{display:block;}
+#contents #portfolio ul li a dl{display:none;position:absolute;top:50%;left:50%;width:200px;height:76px;overflow:hidden;margin-top:-38px;margin-left:-100px;letter-spacing:0;color:white;text-align:center;}
+#contents #portfolio ul li a dl dt{font-family:'Crimson Text', serif;font-size:20px;line-height:22px;font-style:italic;margin-bottom:15px;}
+#contents #portfolio ul li a dl dd{text-transform:uppercase;font-family:'Raleway', sans-serif;font-size:11px;color:white;}
+/* portfolio{e}*/
+
+/* contact{s} */
+#contents #contact p{padding-bottom:30px;border-bottom:1px solid #f0f0f0;}
+#contents #contact ul{overflow:hidden;margin-top:30px;padding-bottom:30px;border-bottom:1px solid #f0f0f0;}
+#contents #contact ul li{float:left;width:300px;}
+#contents #contact ul li dl dt{font-family:'Roboto', serif;font-weight:500;font-size:12px;color:#222121;letter-spacing:0.05em;text-transform: uppercase;}
+#contents #contact em{display:inline-block;padding-top:30px;font-family:'Roboto', serif;
+font-weight:400;font-size:12px;letter-spacing:-0.02em;line-height:20px;}
+#contents #contact em a{font-weight:600;color:#000;}
+#contents #contact em a:hover{text-decoration: underline;}
+#contents #contact strong{display:block;margin-top:50px;color:#000;font-size:55px;font-family:'Crimson Text', serif;font-weight:400;letter-spacing:-0.03em;font-style:italic;}
+/* contact{e} */
+
+/* contents{e} */

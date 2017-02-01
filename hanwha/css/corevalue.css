@@ -1,0 +1,65 @@
+/*** sub section2 ****/
+
+div#sub_section2 {
+	
+	height: 885px;
+	background: #f5f6f7;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*** core value grid ****/
+
+div.core_grid {
+	
+	margin-top: 50px;
+}
+
+.clearfix::after {
+	
+	content: '';
+	display: block;
+	clear: both;
+}
+
+div.core_grid ul.map { width:100%;	}
+
+div.core_grid ul.map li{
+	float:left; width:33.33%; height:490px;
+	position:relative;
+	box-sizing: border-box;
+}
+
+div.core_grid ul.map li div {box-sizing: border-box;}
+
+div.core_grid ul.map li div.map01 { height:245px; background-image:url(../images/core_img1.jpg); }
+div.core_grid ul.map li div.map02 { height:245px; background: white; }
+div.core_grid ul.map li div.map03 { height: 245px; background: white;}
+div.core_grid ul.map li div.map04 { height:245px; background-image:url(../images/core_img2.jpg); }
+div.core_grid ul.map li div.map05 { height:245px; background-image:url(../images/core_img3.jpg); }
+div.core_grid ul.map li div.map06 { height:245px; background: white; }
+
+div.core_grid ul.map li img{ width:100%; }
+div.core_grid li { overflow:hidden;}
+
+
+/*** core value text ****/
+
+div.map02, div.map03, div.map06 {
+	
+	padding: 40px;
+	overflow: hidden;
+	position: relative;
+}
+
+div.value_desc { text-align: left; }
+div.value_desc > h3 { display: block; font-size: 15px; color: #929292; margin-bottom: 10px; letter-spacing: -0.05em; }
+div.value_desc > h2 { display: block; font-size: 30px; color: #2d2d2d; font-weight: bold; margin-bottom: 20px; letter-spacing: -0.07em; }
+div.value_desc > div.value_bar { width: 30px; height: 5px; background: #ebebeb; margin-bottom: 30px;}
+div.value_desc > p { color: #525252; line-height: 20px; font-size: 13px; letter-spacing: -0.04em;}
+
+div.value_icon1 { width: 82px; height: 78px; background: url(../images/value_icon1.png); position: absolute; top: 40px; right: 40px;}
+
+div.value_icon2 { width: 46px; height: 79px; background: url(../images/value_icon2.png); position: absolute; top: 40px; right: 40px;}
+
+div.value_icon3 { width: 92px; height: 78px; background: url(../images/value_icon3.png); position: absolute; top: 40px; right: 40px;}

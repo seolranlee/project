@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive jQuery Modal &amp; Dialog Popups</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<style>
+.popup {
+  background-color: rgb( 248, 248, 248 );
+  box-shadow: 0px 2px 2px 0px rgba( 0, 0, 0, .3 );
+}
+.popup-content {
+  padding: 20px 40px 30px 40px;
+}
+.popup-overlay {
+  background-color: rgba( 0, 0, 0, .3 );
+}
+#popup-video.popup {
+    overflow: visible;
+    background-color: #1B1B1B;
+    box-shadow: 0px 1px 5px 0 rgba( 0, 0, 0, .8 );
+  }
+
+
+  #popup-video.popup .popup-close {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: -30px;
+    font-size: 1.5em;
+    color: #fff;
+  }
+
+  #popup-video.popup .embed-container { 
+    position: relative; 
+    z-index: 1;
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+  } 
+  #popup-video.popup .embed-container iframe, 
+  #popup-video.popup .embed-container object, 
+  #popup-video.popup .embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+  }
+  </style>
+<link href="jquery.popup.css" rel="stylesheet" type="text/css">
+<script>
+      
+    </script>
+</head>
+
+<body>
+<div class="container" style="margin:30px auto;">
+<h1>Responsive jQuery Modal & Dialog Popups</h1>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<h2>Dialog popup Demo</h2>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-fade-scale">effect-fade-scale</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-slide-right">effect-slide-right</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-slide-left">effect-slide-left</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-slide-top">effect-slide-top</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-newspaper">effect-newspaper</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="effect-sticky">effect-sticky</button>
+<button class="btn dark" data-dialog="#popup-dialog" data-effect="">fade-in (no effect)</button>
+<h2>Youtube Video Demo</h2>
+<a href="https://www.youtube.com/embed/e9al_k8e93I" data-action="watch-video">
+  <img src="video.jpg" />
+</a>
+<div class="popup effect-fade-scale" id="popup-video">
+  <div class="embed-container"></div>
+  <a href="#" class="popup-close">
+    <i class="glyphicon glyphicon-remove"></i>
+  </a>
+</div>
+<div class="popup effect-fade-scale" id="popup-dialog">
+  <div class="popup-content">
+    <h3>Dialog Box Heading</h3>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus sed dolor quis pharetra. Phasellus porttitor tellus vel metus semper aliquam at malesuada mi. 
+    </p>
+    <button class="popup-close btn btn-danger">закрыть</button>
+  </div>
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="jquery.popup.js"></script>
+<script src="jquery.popup.dialog.min.js"></script>
+
+<script>
+(function($){
+        $(function(){
+          $('[data-dialog]').on('click', function(e){
+            var $this = $(e.target);
+            $($this.data('dialog')).attr('class', 'popup '+$this.data('effect'));
+          });
+        });
+      })(jQuery);
+  $(document).ready(function(){
+    $('.popup').popup({
+      close: function(){
+        $(this).find('.embed-container').empty();
+      }
+    });
+	
+    $(document).on('click', '[data-action="watch-video"]', function(e){
+
+      e.preventDefault();
+
+      var plugin = $('#popup-video.popup').data('popup');
+
+      $('#popup-video.popup .embed-container').html(
+        '<iframe src="'
+        + e.currentTarget.href
+        + '?autoplay=1" frameborder="0" allowfullscreen />'
+      );
+
+      plugin.open();
+    });
+
+  });
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
