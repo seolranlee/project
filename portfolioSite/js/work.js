@@ -1,48 +1,12 @@
-$(document).ready(function(){
+var Work = (function($){
 
-	var img_array = $('.work_content img');
-	var doc_top = $(window).scrollTop();
-
-
-
-	var graph = $('.contribute ul li');
-	console.log(graph.length);
-
-	var g_value = [];
-
-
-	// 스크롤이벤트 동작 전
-
-	var graph_h = $('.contribute').offset().top-700;
-
-		// console.log(graph_h);
-
-		if(doc_top >= graph_h){
-
-			$('.contribute').addClass('active');
-
-			for(var i = 0; i < graph.length; i++){
-
-				g_value[i] = $('.contribute ul li').eq(i).children('.value').data('value');
-				$('.contribute.active ul li').eq(i).children('.graph').children('span').children('em').css('width',g_value[i]+'%');
-			}
-
-		}
-		
-	for(var i = 0; i<img_array.length; i++){
-
-		var img_pos = $('.work_content img').eq(i);
-		if(doc_top >= img_pos.offset().top-700){
-			img_pos.addClass('active');
-
-		}
-
-	}
-
-	
-	$(window).scroll(function(){
+	var body_scroll_ = function(){
 
 		var win_top = $(this).scrollTop();
+		var img_array = $('.work_content img');
+		var graph = $('.contribute ul li');
+		var g_value = [];
+		var graph_h = $('.contribute').offset().top-700;
 
 		for(var i = 0; i<img_array.length; i++){
 
@@ -56,29 +20,29 @@ $(document).ready(function(){
 			}
 
 		}
-		// for{e}
 
+		if(win_top >= graph_h){
 
-		var graph_h = $('.contribute').offset().top-700;
+			$('.contribute').addClass('active');
 
-			// console.log(graph_h);
+			for(var i = 0; i < graph.length; i++){
 
-			if(win_top >= graph_h){
-
-				$('.contribute').addClass('active');
-
-				for(var i = 0; i < graph.length; i++){
-
-					g_value[i] = $('.contribute ul li').eq(i).children('.value').data('value');
-					$('.contribute.active ul li').eq(i).children('.graph').children('span').children('em').css('width',g_value[i]+'%');
-				}
-
+				g_value[i] = $('.contribute ul li').eq(i).children('.value').data('value');
+				$('.contribute.active ul li').eq(i).children('.graph').children('span').children('em').css('width',g_value[i]+'%');
 			}
 
+		}
+	}
 
-	});
+	return {
 
+		init : function(){
+			$(window).on('scroll.body_scroll_',body_scroll_);
+		},
+	}
 
+}(jQuery));
 
-
+$(document).ready(function(){
+	Work.init();
 });
