@@ -48,7 +48,7 @@ body{font-family:'나눔고딕', Nanum Gothic, Arial;font-size: 13px;line-height
 
 /* contents{s} */
 #contents{padding:100px 75px 100px 265px;}
-#contents h3{font-family:'Crimson Text', serif;font-weight:600;font-style:italic;font-size:30px;color:#000;margin-bottom: 30px;letter-spacing:-0.03em;}
+#contents h3{font-family:'Crimson Text', serif;font-weight:600;font-style:italic;font-size:30px;color:#000;margin:30px 0;letter-spacing:-0.03em;}
 
 /* profile{s} */
 #contents #profile .about{overflow:hidden;padding-bottom:30px;border-bottom:1px solid #ebebeb;}
@@ -59,7 +59,7 @@ body{font-family:'나눔고딕', Nanum Gothic, Arial;font-size: 13px;line-height
 #contents #profile .about>ul li:nth-child(2):hover a{color:#3a5795;}
 #contents #profile .about>ul li:last-child:hover a{color:#ad8166;}
 #contents #profile .about>ul li a i{margin-right:15px;}
-#contents #profile .work, #contents #profile .skills{padding-top:30px;padding-bottom:30px;border-bottom:1px solid #ebebeb;}
+#contents #profile .work, #contents #profile .skills{padding-bottom:30px;border-bottom:1px solid #ebebeb;}
 #contents #profile .work ul>li>dl>dt{margin-bottom:10px;font-family:'Roboto', serif;font-weight:500;font-size: 16px; color: #222121;letter-spacing:-.03em;}
 #contents #profile .work ul>li>dl{padding-left:50px;}
 #contents #profile .work ul>li:last-child{margin-top:3px;}
@@ -75,7 +75,7 @@ body{font-family:'나눔고딕', Nanum Gothic, Arial;font-size: 13px;line-height
 /* profile{e} */
 
 /* portfolio{s} */
-#contents #portfolio, #contents #contact{padding:30px 0;border-bottom:1px solid #ebebeb;}
+#contents #portfolio, #contents #contact{padding-bottom:30px;border-bottom:1px solid #ebebeb;}
 #contents #portfolio ul{overflow:hidden;}
 #contents #portfolio ul li{float:left;}
 #contents #portfolio ul li a{position:relative;display:block;width:418px;height:auto;}
