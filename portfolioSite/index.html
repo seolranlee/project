@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>SEOLRAN LEE</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="plugin/swiper_api/css/swiper.min.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery_ui.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.smoothwheel.js"></script> -->
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="plugin/swiper_api/js/swiper.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$(function() {
+			  $('a[href*="#"]:not([href="#"])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html, body').animate({
+			          scrollTop: target.offset().top
+			        }, 500);
+			        return false;
+			      }
+			    }
+			  });
+			});
+
+			var mySwiper = new Swiper ('.swiper-container', {
+				// Optional parameters
+				direction: 'horizontal',
+				loop: true,
+				autoplay: 3000,
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				grabCursor: true
+			})
+
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="index">
+			<!-- 추가(s) -->
+			<div class="navi">
+				<div class="navi_cont">
+					<h1><a href="#index">seolran</a></h1>
+					<nav class="cl-effect-15">
+						<a href="#index" data-hover="index" class="active">index</a>
+						<a href="#bio" data-hover="bio">bio</a>
+						<a href="work.html" data-hover="work">work</a>
+						<a href="mailto:leesugar90@gmail.com" data-hover="contact">contact</a>
+						<a href="https://github.com/seolranlee" target="_blank"><span class="btn_git">github</span></a>
+					</nav>
+				</div>
+			</div>
+			<!-- 추가(e) -->
+			<div id="left_visual">
+			</div>
+			<!-- //left_visual -->
+			<div id="right_section">
+				<div class="main_cont">
+					<h2>
+						Hi, there.<br>I will be a <em>extraordinary<br>Front-end developer.</em><br>I’m specialized in <em>HTML, CSS,<br>JavaScript, jQuery</em> etc.
+					</h2>
+					<p class="desc">
+						Lorem ipsum dolor sit amet, consectetur<br>Donec tincidunt sapien laoreet diam convallis,<br>ut vehicula eros fermentum. Duis tincidunt posuere cursus.
+					</p>
+					<div class="github">
+						Check out my <em>github</em><span>This place is where I record my daily learning.</span>
+						<a href="https://github.com/seolranlee" class="btn_default" target="_blank">SEOLRAN GITHUB</a>
+					</div>
+				</div>
+
+			</div>
+			<!-- //right_section -->
+		</div>
+		<!-- //index -->
+		<div id="bio">
+			<div id="header" class="">
+				<div class="header_cont">
+					<div class="nav">
+						<h1><a href="#index">Seolran</a></h1>
+						<div class="menu">
+							<nav class="cl-effect-15">
+								<a href="#index" data-hover="index">index</a>
+								<a href="#" data-hover="bio" class="active">bio</a>
+								<a href="work.html" data-hover="work">work</a>
+								<a href="mailto:leesugar90@gmail.com" data-hover="contact">contact</a>
+								<a href="https://github.com/seolranlee" target="_blank"><span class="btn_git">github</span></a>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //header -->
+			<div class="w_cont">
+				<div class="bio_intro">
+					I just express myself<br>In a few sentences.
+				</div>
+				<!-- slide(S) -->
+				<!-- Slider main container -->
+				<div class="swiper-container">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<span>I have <em>persistence.</em></span>
+						</div>
+						<div class="swiper-slide">
+							<span>I am not <em>stagnant.</em></span>
+						</div>
+						<div class="swiper-slide">
+							<span>I am <em>flexible.</em></span>
+						</div>
+						<div class="swiper-slide">
+							<span>I am <em>trendy.</em></span>
+						</div>
+					</div>
+					<!-- If we need pagination -->
+					<div class="swiper-pagination"></div>
+
+					<!-- If we need navigation buttons -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+				<!-- //slide(e) -->
+				<!-- info(s) -->
+				<div class="information">
+					<div class="profile">
+						<ul>
+							<li>
+								<p class="info_title">Technology and knowledge</p>
+								<p class="info_desc">
+									HTML5 / CSS3 / SASS / JavaScript / jQuery<br>Web Standards / Web Accessibility /<br>Interactive Web / Responsive Web /<br>Git / Photoshop
+								</p>
+							</li>
+							<li>
+								<p class="info_title">Career</p>
+								<ul class="info_list">
+									<li><p class="career_title">digitalDigm PB Division publisher</p><p class="career_period">March 2016 ~</p></li>
+									<li><p class="career_title">SBS ACADEMY web process</p><p class="career_period">SBS ACADEMY web process</p></li>
+									<li><p class="career_title">EXITO Marketing Agency Web Designer Intern</p><p class="career_period">September 2014 - March 2015</p></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="capacity_graph">
+						<ul>
+							<li>
+								<p class="title">HTML5</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=85>85%</p>
+							</li>
+							<li>
+								<p class="title">CSS3</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=85>85%</p>
+							</li>
+							<li>
+								<p class="title">JavaScript</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=70>70%</p>
+							</li>
+							<li>
+								<p class="title">jQuery</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=80>80%</p>
+							</li>
+							<li>
+								<p class="title">SASS</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=60>60%</p>
+							</li>
+							<li>
+								<p class="title">Git</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=50>50%</p>
+							</li>
+							<li>
+								<p class="title">Photoshop</p>
+								<div class="graph"><span><em></em></span></div>
+								<p class="value" data-value=90>90%</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- //info(e) -->
+			</div>
+			<!-- //w_cont -->
+
+		</div>
+		<!-- //bio(e) -->
+	</div>
+	<!-- //wrppaer -->
+</body>
+</html>
