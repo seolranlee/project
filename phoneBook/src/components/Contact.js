@@ -14,10 +14,11 @@ export default class Contact extends React.Component{
  			selectedKey : -1,
  			keyword: '',
  			contactData: [
- 				{ name: 'Abet', date: '2011.11.11', phone: '010-0000-0001', like: 11, id: 1 },
- 				{ name: 'Betty', date: '2022.11.11', phone: '010-0000-0002', like: 22, id: 2 },
- 				{ name: 'Charlie', date: '2033.11.11', phone: '010-0000-0003', like: 33, id: 3 },
- 				{ name: 'David', date: '2044.11.11', phone: '010-0000-0004', like: 44, id: 4 },
+ 				{ name: 'Wendy', date: '1994.02.21', phone: '010-0000-0001', like: 11, id: 1 },
+ 				{ name: 'Irene', date: '1991.03.29', phone: '010-0000-0002', like: 22, id: 2 },
+ 				{ name: 'Seulgi', date: '1994.02.10', phone: '010-0000-0003', like: 33, id: 3 },
+ 				{ name: 'Joy', date: '1996.09.03', phone: '010-0000-0004', like: 44, id: 4 },
+ 				{ name: 'Yeri', date: '1999.03.05', phone: '010-0000-0004', like: 55, id: 5 },
  			],
 
  		}
@@ -26,6 +27,7 @@ export default class Contact extends React.Component{
  		this.handleClick = this.handleClick.bind(this);
  		this.handleCreate = this.handleCreate.bind(this);
  		this.handleRemove = this.handleRemove.bind(this);
+ 		this.handleEdit = this.handleEdit.bind(this);
  	}
 
  	handleChange(value) {
@@ -60,14 +62,32 @@ export default class Contact extends React.Component{
 
 
  	handleRemove(){
+
+ 		console.log(this.state.selectedKey);
  		if(this.state.selectedKey < 0){
  			return;
+ 			// alert('지우실 카드를 먼저 선택해 주세요.')
  		}
  		this.setState({
  			contactData: update(this.state.contactData,
  				{ $splice: [[this.state.selectedKey, 1]] }
  			),
  			selectedKey: -1
+ 		})
+ 	}
+
+ 	handleEdit(name, phone, date){
+ 		this.setState({
+ 			contactData: update(this.state.contactData, 
+ 				{
+ 					[this.state.selectedKey] : {
+ 						name: { $set: name },
+ 						phone: { $set: phone },
+ 						date: { $set: date }
+ 					}
+
+ 				}
+ 			)
  		})
  	}
 
@@ -90,6 +110,7 @@ export default class Contact extends React.Component{
  							isSelected={this.state.selectedID != -1}
  							key={i}
  							onClick={()=>this.handleClick(contact, i)}
+ 							onEdit={this.handleEdit}
  						/>);
  			});
  		}
