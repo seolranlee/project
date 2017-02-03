@@ -58,6 +58,13 @@ export default class Contact extends React.Component{
  		this.setState({
  			contactData: update(this.state.contactData, { $push: [contact] } )
  		});
+
+ 		alert('등록되었습니다');
+
+ 		$('.writecard').removeClass('on');
+		$('.write_btn').removeClass('off');
+
+
  	}
 
 

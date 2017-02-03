@@ -12,6 +12,7 @@ export default class ContactCreate extends React.Component{
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleClick = this.handleClick.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 
 	}
 
@@ -39,6 +40,12 @@ export default class ContactCreate extends React.Component{
  		})
  	}
 
+ 	handleKeyPress(e) {
+ 		if(e.charCode === 13) {		// 13은 enter란 뜻
+ 			this.handleClick();
+ 		}
+ 	}
+
 
 	render(){
 
@@ -53,6 +60,7 @@ export default class ContactCreate extends React.Component{
 				</a>
 				<div className="writecard">
 					<div className="writeform">
+						{/*<a href="#" className="card_close"><i className="fa fa-times fa-3x" aria-hidden="true"></i></a>*/}
 						<ul>
 							<li>
 								<div className="form_title">
@@ -73,10 +81,18 @@ export default class ContactCreate extends React.Component{
 
 							<li>
 								<div className="form_title">
-									<label htmlFor="user_password">password</label>
+									<label htmlFor="user_date">date</label>
 								</div>
 								<div className="form_content">
-									<input type="password" id="user_password" name="" title="" className="i_text" />
+									<input
+										type="text"
+										id="user_date"
+										name="date"
+										placeholder="date"
+										value={this.state.date}
+										onChange={this.handleChange}
+										className="i_text"
+									/>
 								</div>
 							</li>
 
@@ -94,6 +110,7 @@ export default class ContactCreate extends React.Component{
 											placeholder="phone"
 											value={this.state.phone}
 											onChange={this.handleChange}
+											onKeyPress={this.handleKeyPress}
 										/>
 
 									</div>
@@ -101,8 +118,7 @@ export default class ContactCreate extends React.Component{
 							</li>
 						</ul>
 						<div className="form_btn_wrap">
-							<a href="#" className="reg_btn" onClick={this.handleClick}>registration</a>
-							<a href="#" className="reg_btn">cancle</a>
+							<a href="#reg" className="reg_btn" onClick={this.handleClick}>registration</a>
 						</div>
 					</div>
 				</div>

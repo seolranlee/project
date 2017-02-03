@@ -14,6 +14,7 @@ export default class ContactInfo extends React.Component{
  		this.handleChange = this.handleChange.bind(this);
  		this.handleEdit = this.handleEdit.bind(this);
  		this.notSelected = this.notSelected.bind(this);
+ 		this.handleKeyPress = this.handleKeyPress.bind(this);
  	}
 
  	handleToggle(){
@@ -48,6 +49,12 @@ export default class ContactInfo extends React.Component{
  	notSelected(){
 		alert('선택을 해주세요');
 	}
+
+	handleKeyPress(e) {
+ 		if(e.charCode === 13) {		// 13은 enter란 뜻
+ 			this.handleToggle();
+ 		}
+ 	}
 
 
 	render(){
@@ -119,6 +126,7 @@ export default class ContactInfo extends React.Component{
 							placeholder="phone"
 							value={this.state.phone}
 							onChange={this.handleChange}
+							onKeyPress={this.handleKeyPress}
 						/>
 					</div>
 				</div>
