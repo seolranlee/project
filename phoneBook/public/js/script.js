@@ -17,6 +17,7 @@ var Main = (function($){
 	//플로팅버튼 기능
 	var floating_btn_click_ = function(){
 		$('#floating_area .writecard').addClass('on');
+		$('#floating_area .writecard input[name=name]').focus();
 		$('#floating_area .write_btn').addClass('off');
 	}
 
@@ -34,6 +35,11 @@ var Main = (function($){
 			};
 		};
 
+	}
+
+	var btn_close_ = function(){
+		$('.writecard').removeClass('on');
+		$('.write_btn').removeClass('off');
 	}
 
 	// 서치박스 기능
@@ -56,7 +62,6 @@ var Main = (function($){
 
 	}
 
-
 	return {
 
 		init : function(){
@@ -71,6 +76,8 @@ var Main = (function($){
 
 			// 닫기 이벤트
 			$(document).on('click.close_click_, touchstart.close_touchstart_', 'body', close_click_);
+
+			$(document).on('click.close_click_, touchstart.close_touchstart_', '.card_close', btn_close_);
 
 			// 서치박스 이벤트
 			$(document).on('click.search_click_', '.ico_search', search_click_);
