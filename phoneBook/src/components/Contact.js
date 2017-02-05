@@ -9,19 +9,14 @@ export default class Contact extends React.Component{
 
 	constructor(props){
  		super(props);
+
  		this.state = {
  			selectedID : -1,
  			selectedKey : -1,
  			keyword: '',
- 			contactData: [
- 				{ name: 'Wendy', date: '1994.02.21', phone: '010-0000-0001', like: 11, id: 1 },
- 				{ name: 'Irene', date: '1991.03.29', phone: '010-0000-0002', like: 22, id: 2 },
- 				{ name: 'Seulgi', date: '1994.02.10', phone: '010-0000-0003', like: 33, id: 3 },
- 				{ name: 'Joy', date: '1996.09.03', phone: '010-0000-0004', like: 44, id: 4 },
- 				{ name: 'Yeri', date: '1999.03.05', phone: '010-0000-0004', like: 55, id: 5 },
- 			],
-
+ 			contactData: null,
  		}
+
 
  		this.handleChange = this.handleChange.bind(this);
  		this.handleClick = this.handleClick.bind(this);
@@ -55,9 +50,10 @@ export default class Contact extends React.Component{
  	}
 
  	handleCreate(contact){
- 		this.setState({
- 			contactData: update(this.state.contactData, { $push: [contact] } )
- 		});
+ 	
+
+ 		this.createData(contact);
+
 
  		alert('등록되었습니다');
 
@@ -67,60 +63,145 @@ export default class Contact extends React.Component{
 
  	}
 
+ 	createData(contact){
+ 		console.log(contact);
+
+ 		$.ajax({
+			url:'http://jolsejolse.iptime.org:8023/api/users/',
+			type:'POST',
+			data:contact,
+			dataType:'json',
+			success:function(data){
+
+				console.log(data);
+
+				var new_data = {
+
+					id : data.user_id,
+					user_name : contact.user_name,
+					user_phone : contact.user_phone,
+					user_date : contact.user_date,
+					user_like : 0,
+				}
+
+
+				this.setState({
+		 			contactData: update(this.state.contactData, { $push: [new_data] } )
+		 		});
+			}.bind(this)
+		});
+ 	}
+
 
  	handleRemove(){
 
- 		console.log(this.state.selectedKey);
- 		if(this.state.selectedKey < 0){
- 			return;
- 			// alert('지우실 카드를 먼저 선택해 주세요.')
- 		}
- 		this.setState({
- 			contactData: update(this.state.contactData,
- 				{ $splice: [[this.state.selectedKey, 1]] }
- 			),
- 			selectedKey: -1
- 		})
+ 		const id = this.state.contactData[this.state.selectedKey].id;
+
+ 		console.log(id);
+
+ 		this.removeData(id)
  	}
 
- 	handleEdit(name, phone, date){
- 		this.setState({
- 			contactData: update(this.state.contactData, 
- 				{
- 					[this.state.selectedKey] : {
- 						name: { $set: name },
- 						phone: { $set: phone },
- 						date: { $set: date }
- 					}
 
- 				}
- 			)
- 		})
+ 	removeData(id){
+ 		console.log(id);
+
+ 		$.ajax({
+			url:'http://jolsejolse.iptime.org:8023/api/users/'+id,
+			type:'DELETE',
+			dataType:'json',
+			success:function(data){
+
+				console.log(data);
+				if(this.state.selectedKey < 0){
+		 			return;
+		 			// alert('지우실 카드를 먼저 선택해 주세요.')
+		 		}
+		 		this.setState({
+		 			contactData: update(this.state.contactData,
+		 				{ $splice: [[this.state.selectedKey, 1]] }
+		 			),
+		 			selectedKey: -1
+		 		})
+
+			}.bind(this)
+		});
  	}
+
+
+ 	handleEdit(contact, id){
+ 		this.editData(contact, id);
+ 		
+ 	}
+
+ 	editData(contact, id){
+ 		$.ajax({
+			url:'http://jolsejolse.iptime.org:8023/api/users/' + id,
+			type:'PUT',
+			data:contact,
+			dataType:'json',
+			success:function(data){
+
+				console.log(data);
+
+				this.setState({
+		 			contactData: update(this.state.contactData, 
+		 				{
+		 					[this.state.selectedKey] : {
+		 						user_name: { $set: contact.user_name },
+		 						user_phone: { $set: contact.user_phone },
+		 						user_date: { $set: contact.user_date },
+		 					}
+
+		 				}
+		 			)
+		 		});
+			}.bind(this)
+		});
+ 	}
+
+	callData(){
+		$.ajax({
+			url:'http://jolsejolse.iptime.org:8023/api/users/',
+			type:'GET',
+			dataType:'json',
+			success:function(data){
+				this.setState({
+					contactData : data,
+				});
+			}.bind(this)
+		});
+	}
 
 
 	render(){
 
 		const mapToComponents = (data) => {
- 			data.sort();
- 			data = data.filter(
 
- 				(contact) => {
- 					return contact.name.toLowerCase().indexOf(this.state.keyword) > -1;
- 				}
- 			);
- 			return data.map((contact, i)=>{
- 				return (<ContactInfo
- 							contact={contact}
- 							data={this.state.contactData[this.state.selectedKey]}
- 							onRemove={this.handleRemove}
- 							isSelected={this.state.selectedID != -1}
- 							key={i}
- 							onClick={()=>this.handleClick(contact, i)}
- 							onEdit={this.handleEdit}
- 						/>);
- 			});
+			if ( data ) {
+	 			// data.sort();
+	 			data = data.filter(
+
+	 				(contact) => {
+	 					return contact.user_name.toLowerCase().indexOf(this.state.keyword) > -1;
+	 				}
+	 			);
+	 			return data.map((contact, i)=>{
+	 				return (<ContactInfo
+	 							contact={contact}
+	 							data={this.state.contactData[this.state.selectedKey]}
+	 							onRemove={this.handleRemove}
+	 							isSelected={this.state.selectedID != -1}
+	 							key={i}
+	 							onClick={()=>this.handleClick(contact, i)}
+	 							onEdit={this.handleEdit}
+	 						/>);
+	 			});
+ 			}
+
+ 			this.callData();
  		}
+
 
 
 		return(

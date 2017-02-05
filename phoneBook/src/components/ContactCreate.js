@@ -5,9 +5,9 @@ export default class ContactCreate extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			name: '',
-			phone: '',
-			date:'',
+			user_name: '',
+			user_phone: '',
+			user_date:'',
 		}
 
 		this.handleChange = this.handleChange.bind(this);
@@ -26,17 +26,17 @@ export default class ContactCreate extends React.Component{
 
  	handleClick() {
  		const contact = {
- 			name: this.state.name,
- 			phone: this.state.phone,
- 			date: this.state.date,
+ 			user_name: this.state.user_name,
+ 			user_phone: this.state.user_phone,
+ 			user_date: this.state.user_date,
  		};
 
  		this.props.onCreate(contact);
 
  		this.setState({
- 			name: '',
- 			phone: '',
- 			date:'',
+ 			user_name: '',
+ 			user_phone: '',
+ 			user_date:'',
  		})
  	}
 
@@ -70,9 +70,9 @@ export default class ContactCreate extends React.Component{
 									<input
 										type="text"
 										id="user_name"
-										name="name"
-										placeholder="name"
-										value={this.state.name}
+										name="user_name"
+										placeholder="user_name"
+										value={this.state.user_name}
 										onChange={this.handleChange}
 										className="i_text"
 									/>
@@ -87,9 +87,9 @@ export default class ContactCreate extends React.Component{
 									<input
 										type="text"
 										id="user_date"
-										name="date"
-										placeholder="date"
-										value={this.state.date}
+										name="user_date"
+										placeholder="user_date"
+										value={this.state.user_date}
 										onChange={this.handleChange}
 										className="i_text"
 									/>
@@ -105,10 +105,10 @@ export default class ContactCreate extends React.Component{
 
 										<input
 											type="text"
-											name="phone"
+											name="user_phone"
 											id="user_phone"
-											placeholder="phone"
-											value={this.state.phone}
+											placeholder="user_phone"
+											value={this.state.user_phone}
 											onChange={this.handleChange}
 											onKeyPress={this.handleKeyPress}
 										/>
