@@ -1,0 +1,78 @@
+@import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
+
+
+#section_visual{
+    background: transparent;
+    box-sizing: border-box;
+    width:100%;
+    height:500px;
+    min-height:500px;
+}
+body{font-family: 'Helvetica', 'Open Sans', sans-serif;color:#393939;}
+.sub_wrap.v03 *::selection{background-color:#febdc9;color:#fff;}
+
+
+
+.wrap{overflow:hidden;position:relative;width:1100px;margin:0 auto}
+.visual_area{overflow:hidden;position:relative;height:550px;}
+.visual_area .video_area{position:relative;top:50%;transform:translateY(-50%);}
+.visual_area .video_area video{transform:scale(1.1);transition:all .6s ease-out}
+.visual_area.active .video_area video{transform:scale(1);}
+.visual_inner{position:absolute;width:945px;height:380px;left:50%;top:50%;transform:translate(-50%, -50%);}
+.album_cover{position:absolute;left:-270px;width:612px;height:380px;background:url(../images/albumcover03.png);background-size:612px 380px;transition:all .6s ease-out}
+.txt_area{position:absolute;left:478px;right:0;top:200px;bottom:50px;color:#222;}
+.visual_area .txt_area h2{font-size:48px;margin-top:100px;opacity:0;transition:all .4s ease-in-out;transition-delay:.5s}
+.visual_area.active .txt_area h2{margin-top:0;opacity:1;}
+.visual_area .txt_area .desc{position:absolute;left:315px;bottom:-50px;opacity:0;transition:all .4s ease-in-out;transition-delay:1s}
+.visual_area.active .txt_area .desc{bottom:0;opacity:1;}
+
+
+
+
+.txt_area h2:after{position:absolute;right:78px;content:'';display:block;width:75px;height:2px;background:#222}
+.txt_area .desc em{font-family: 'Nanum Barun Gothic', sans-serif;font-size:18px}
+.txt_area .desc span{display:block;margin-top:5px;font-size:18px}
+section{}
+section .overview{padding:100px 0 150px;}
+section .overview ul{overflow:hidden;}
+section .overview ul li{float:left;width:25%;padding-right:50px;opacity:0;transition:all .6s ease-out;margin-top:50px;}
+section .overview.active ul li{opacity:1;margin-top:0;}
+section .overview.active ul .overview01{transition-delay:0;}
+section .overview.active ul .overview02{transition-delay:.3s;}
+section .overview.active ul .overview03{transition-delay:.6s}
+section .overview.active ul .overview04{transition-delay:.9s}
+section .overview ul li h3{margin-bottom:25px;font-family: 'Montserrat', sans-serif;text-transform:uppercase;font-size:14px;font-weight:400;}
+section .overview ul li p{font-size:14px;line-height:24px;}
+section .overview ul li .ko{font-family: 'Nanum Barun Gothic', sans-serif;}
+.btn_itunes{position:relative;display:block;margin-top:15px;width:180px;height:35px;line-height:35px;background:#222;text-align:center;font-weight:300;}
+.btn_itunes span{position:absolute;width:100%;left:50%;top:50%;transform:translate(-50%, -50%);font-family: 'Montserrat', sans-serif;text-transform:uppercase;color:#fff;font-size:11px;transition:all .2s ease-in-out}
+.btn_itunes:hover span{color:#222;}
+/*.btn_itunes:hover{color:#222;}*/
+.btn_itunes:before{position:absolute;content:'';display:block;left:0;width:0;height:100%;background:#f2f2f2;transition:all .2s ease-in-out}
+.btn_itunes:hover:before{width:100%;}
+section .lyrics .wrap{padding:125px 250px 125px;}
+
+section .lyrics .subtitle{font-size:42px;text-align:center;font-weight:normal;margin-top:50px;opacity:0;transition:all .6s ease-out;transition-delay:0s}
+section .lyrics .subtitle:after{display:block;content:'';width:35px;height:2px;background:#222;margin:30px auto 50px;}
+section .lyrics p{font-family: 'Nanum Barun Gothic', sans-serif;font-size:13px;line-height:24px;text-align:justify;margin-top:100px;opacity:0;transition:all .6s ease-out;transition-delay:.5s}
+
+
+
+section .lyrics.active .subtitle{margin-top:0;opacity:1;}
+section .lyrics.active p{margin-top:0;opacity:1;}
+
+
+section .bottom{overflow:hidden;position:relative;padding:50px 0 250px;text-align:center;background:#f5f5f5;transition:all .4s ease-out}
+section .bottom p{position:relative;font-family: 'Montserrat', sans-serif;text-transform:uppercase;font-size:12px;font-weight:400;color:#d2d2d2;}
+section .bottom p:after{position:absolute;display:block;content:'';width:24px;height:1px;background:#ddd;left:50%;bottom:-10px;margin-left:-12px;}
+section .bottom h2 {margin-top:45px;}
+section .bottom h2 a{font-family: 'Libre Baskerville', serif;font-size:72px;text-transform:uppercase;letter-spacing:.2em;transition:all .6s ease-out;color:#393939;}
+
+
+section .bottom h2 a:hover{letter-spacing:.5em}
+section .bottom .nextalbum{position:absolute;left:50%;bottom:-377px;transform:translateX(-50%);width:350px;height:377px;background:url(../images/nextalbum04.png);background-size:350px 377px;transition:all .4s ease-in-out}
+section .bottom h2:hover + .nextalbum{bottom:-200px;}
+
+
+.sub_wrap.v03 .bottom.active{background:#730101}
+.sub_wrap.v03 .bottom.active *{color:#fff;}
